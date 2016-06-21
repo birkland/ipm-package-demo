@@ -1,0 +1,18 @@
+@prefix myns:<http://example.org/> .
+
+<test:/1> a myns:Whatever ;
+   myns:is "one" ;
+   myns:isProxiedBy <test:/1#proxy> .
+   
+<test:/1#proxy> a myns:Proxy ;
+   myns:hasProxyMessage "hello there" .
+
+<test:/2> a myns:Thingy ;
+   myns:hasAuthor [
+      a myns:Person ;
+      myns:personName "The name" 
+   ] ;
+   myns:contains <test:/3> .
+   
+<test:/3> a myns:File ;
+   myns:fileType "binary" .
